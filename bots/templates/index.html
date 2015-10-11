@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Enthronement</title>
+    {% load staticfiles %}
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/xodia.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    {% if login_status == 1 %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#page-top"><img src="{% static "img/x.png" %}" style="position:relative; padding-top:1%; width:40%;"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Description</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Games</a>
+                    </li>
+                    <li>	
+                        <a class="page-scroll" href="#about">Rules</a>
+                    </li>
+                    <li>
+                        <a href="/bots/leaderboard/">Leaderboard</a>
+                    </li> 
+                   <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu dd page-scroll">
+                       --> <li><a href="/bots#team">Contact Us</a></li>
+                        <!--<li class="divider"></li>
+                        <li><a href="/bots/teamp">Our Team</a></li>
+                        </ul>
+                    </li>-->
+                    <li>
+                        <a class="page-scroll" href="/bots/mypage">{{user}}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots/log-out">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    {% else %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#page-top"><img src="{% static "img/x.png" %}" style="position:relative; padding-top:1%; width:40%;"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Description</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Games</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Rules</a>
+                    </li>
+                    <li>
+                        <a href="/bots/leaderboard/">Leaderboard</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="0#contact">Login/Signup</a>
+                    </li> 
+                   <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu dd page-scroll">
+                       --> <li><a href="/bots#team">Contact Us</a></li>
+                        <!--<li class="divider"></li>
+                        <li><a href="/bots/teamp">Our Team</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    {% endif %}
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Combat of Codes</div>
+                <div class="intro-heading">Enthronement</div>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+            </div>
+        </div>
+    </header>
+
+
+<!-- Description Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Description</h2>
+                </div>
+                <div class="col-lg-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+                      </ol>
+                     
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading text-center ct">ENTHRONEMENT</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-center cb">
+<h3>Use your C/C++ skills to dethrone your enemy & wear the crown of victory.</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3>- Each player has 10 pieces to start with:<br>3 knights, 6 Bannermen & a Dragon.<br>- The chances for movement of your pieces are in the Defense, Offense and Magnetic Lane area.<br>- Enemy's THRONE area consists of throne,common and defense area.<br>- Your Pieces in offense area cannot move into your own defense area and vice-versa </h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading text-center ct">KNIGHT</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3><br>- Move a step in any direction i.e. PLAIN MOVE <br>- Jump over an Enemy to kill and land a block ahead i.e. JUMP KILL<br>- Jump over an ally and land a block ahead i.e. CANTER</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading text-center ct">Bannerman</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3><br>- Move a step in any direction i.e. PLAIN MOVE<br>- Jump over an enemy to kill and land a block ahead i.e JUMP KILL</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading ct text-center">Dragon</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3><br>- Move a step in any direction i.e. PLAIN MOVE<br>- Fly over allies in a line and land at the end i.e. FLY HORIZONTAL/VERTICAL <br>- Kill by Fire i.e. FIRE BREATH</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading ct text-center">Constraints</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3><br>- No piece can move or attack backward<br>- Also every piece move such that it doesn't resist the pull of magnetic lines<br>- Once inside the side lane, a piece can come out only when it reaches enemy's common area<br>- A piece in the side lane can only move vertically/diagonally<br>- However,to move out of a middle lane,use diagonal movement</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading ct text-center">Constraints</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-left cb">
+<h3><br>- Dragon cannot attack enemy's defensive pieces unless in their defence area<br>- If it is in any side lane then it can attack only vertically<br>- Fire Breath of dragon kills anyone in the two block(Horizontal/Vertical)</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel desc">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <h1 class="section-heading ct text-center">How Do i win?</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-1"></div>
+                                    <div class="col-lg-10 text-center cb">
+<h3><br>Make two of your offense pieces reach the opponent's iron throne or kill all pieces.</h3>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                      </div>
+                     
+                      <!-- Controls -->
+                      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                    </div> <!-- Carousel -->
+                </div>
+            </div>
+        </div>
+    <div class="row" style="position:relative; padding-top:50px;">
+        <div class="col-lg-12 text-center">
+            <h4 class="section-heading">Detailed Description</h4>
+            <a href="/media/Enthronement.zip" class="btn btn-xl">Download</a>
+        </div>
+    </div>
+    </section>
+	<section class="bg-light-gray1">
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Teaser</h2>
+                </div>
+            </div>
+		<div class = "row">
+			<div class="col-lg-12 text-center">
+                                <iframe width="640" height="360" src="//www.youtube.com/embed/jeknrK_tP8w" frameborder="0" allowfullscreen></iframe>
+			</div> 	
+		</div>
+</div>
+	</section>
+
+    <!-- Games Grid Section--> 
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" style="color:white;">Games</h2>
+                </div>
+            </div>
+            <div class="row">
+			{% for key,val in bot_name_id.items %}
+                		<div class="col-lg-4">
+					<div class="f3d">
+						<div class="f3db">
+						{% for a,b in bot_name_id.items %}
+							{% if a != key %}
+							<ul>	
+								<li><a href="{{val}}vs{{b}}">{{key}} vs {{a}}</a></li>
+							</ul>
+							{% endif %}
+						{% endfor %}	
+						</div>
+						<div class="f3df">{{key}}</div>
+					</div>
+                		</div>
+			{% endfor %}
+            </div>
+        </div>
+    </section>
+    
+<!-- Rules Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Rules</h2>
+                </div>
+        <div class="col-xs-12">
+            <ol class="list-group">
+                <li class="list-group-item section-heading">The Code for the bots must be strictly written in C/C++.</li>
+                <li class="list-group-item section-heading">Last date for submission of bots is 15th September, 2014.</li>
+                <li class="list-group-item section-heading">You may resubmit the codes as many times as you want before the last date of submission. Any resubmissions henceforth will not be entertained.</li>
+                <li class="list-group-item section-heading">Bots may be DISQUALIFIED due to following reasons:<br>1.Bot did not respond within 2 seconds of its execution<br>2.Bot returned an INVALID MOVE<br>3.Syntactical errors in the Program<br>4.Excessive resource usage.<br>5.Any Malicious activity encountered in the code.</li>
+            </ol>
+        </div>
+            </div>
+        </div>
+    </section>
+
+{% if opt == 0 %}
+    <!-- Submit Your Bot Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Welcome Guest</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-4">
+                        	 <div><a class="btn btn-xl" href="/bots/1#contact">Login</a></div>
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-4">
+                        	 <div><a class="btn btn-xl" href="/bots/2#contact">Signup</a></div>
+                            </div>
+			</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% elif opt == 3 %}
+    <!-- Submit Your Bot Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Welcome {{username}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                      	 <div><a class="btn btn-xl" href="/bots/mypage/3#contact">Submit</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% else %}
+
+    <!-- Submit Your Bot Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">
+			{% if opt == 1 %}LOG IN
+			{% elif opt == 2 %}SIGN UP
+			{% else %}
+			{% endif %}</h2>
+                  <!--  <h3 class="section-subheading text-muted">Accept the challenge!!</h3> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name = 'add_bot' enctype = 'multipart/form-data' method = 'post'
+			{% if opt == 1 %}action = "/bots/log-in/"
+			{% elif opt == 2 %}action = "/bots/sign-up/"
+			{% else %}action = ""
+			{% endif %}>
+		    {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+				{% for field in form %}
+				    {% if field.name != 'About' and field.name != 'password' and field.name != 'Name' %}
+                                    <div class="form-group">
+                                        {{field}}
+                                    </div>
+				    {% endif %}
+				{% endfor %}
+                            </div>
+                            <div class="col-md-6 text-center">
+                                    {% for field in form %}
+					{% if field.name == 'password' or field.name == 'Name' %}
+                                <div class="form-group">
+					    {{field}}
+                                </div>
+					{% endif %}
+				    {% endfor %}
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">
+				{% if opt == 1 %}LOG IN
+				{% elif opt == 2 %}SIGN UP
+				{% else %}
+				{% endif %}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif %}
+
+    <!-- Contact Us Section -->
+<!-- Contact Us Section -->
+    <section id="team" class="bg-light-gray1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <h4 class="section-heading">Abhiraj Darshankar : 9987921320</h2>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <h4 class="section-heading">Ankit Bhagat : 9049047060</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <p class="section-heading"><b>Email :</b>
+                    <a href="mailto:xodia@credenz.info">xodia@credenz.info</a></p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <a href="http://facebook.com/events/571469602979253">follow us on facebook<i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright &copy; PICT IEEE Student Branch.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{% static "js/jquery-1.11.0.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{% static "js/classie.js" %}" ></script>
+    <script src="{% static "js/cbpAnimatedHeader.js" %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/xodia.js" %}"></script>
+
+</body>
+
+</html>

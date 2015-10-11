@@ -1,0 +1,71 @@
+var log1="B.2.2.5.5 K.2.2.5.5 e.1.3 #.2";
+var move = new Array();
+var j=0,k=0,h;
+var log2=log1.split(" ");
+console.log(log2);
+for(var i=0;i<log2.length;i++)
+{
+    var moves=log2[i].split(".");
+    move[j++]=moves;
+}
+while(k<j)
+{
+    h=move[k++].length;
+    if(h==5)
+    {
+        console.log(move[k-1]);
+    }
+    if(h==2)
+    {
+       if(move[k-1][1]==1)
+       {
+            console.log("bot1 wins");
+        }
+    if(move[k-1][1]==2)
+        {
+            console.log("bot2 wins");
+        }
+    }
+    if(h==3)
+    {
+       if(move[k-1][1]==1)
+       {
+           if(move[k-1][2]==1)
+           {
+            console.log("bot1 disqualified for exceeding time limit");
+           }
+           if(move[k-1][2]==2)
+           {
+            console.log("bot1 disqualified for using fork bomb");
+           }
+           if(move[k-1][2]==3)
+           {
+            console.log("bot1 disqualified.");
+           }
+           if(move[k-1][2]==4)
+           {
+            console.log("bot1 disqualified due to gcc error");
+           }
+        }
+    if(move[k-1][1]==2)
+        {
+           
+           if(move[k-1][2]==1)
+           {
+            console.log("bot2 disqualified for exceeding time limit");
+           }
+           if(move[k-1][2]==2)
+           {
+            console.log("bot2 disqualified for using fork bomb");
+           }
+           if(move[k-1][2]==3)
+           {
+            console.log("bot2 disqualified");
+           }
+           if(move[k-1][0][0]==4)
+           {
+            console.log("bot2 disqualified due to gcc error");
+           }
+        }
+    }
+}

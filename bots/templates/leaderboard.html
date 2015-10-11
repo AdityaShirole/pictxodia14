@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Enthronement</title>
+    {% load staticfiles %}
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/xodia.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+{% if login_status == 1 %}
+    <nav class="navbar navbar-default navbar-fixed-top navbar-lb">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-nav page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/bots/#page-top"><img src="{% static "img/x.png" %}" style="position:relative; padding-top:1%; width:40%;"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li>
+                        <a class="page-scroll" href="/bots#services">Description</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Games</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots#about">Rules</a>
+                    </li>
+                    <li>
+                        <a href="/bots/leaderboard/">Leaderboard</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots#contact">Login/Signup</a>
+                    </li> 
+                   <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu dd page-scroll">
+                       --> <li><a href="/bots#team">Contact Us</a></li>
+                        <!--<li class="divider"></li>
+                        <li><a href="/bots/teamp">Our Team</a></li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+{% else %}
+    <nav class="navbar navbar-default navbar-fixed-top navbar-lb">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-nav page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/bots/#page-top"><img src="{% static "img/x.png" %}" style="position:relative; padding-top:1%; width:40%;"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li>
+                        <a class="page-scroll" href="/bots#services">Description</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Games</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots#about">Rules</a>
+                    </li>
+                    <li>
+                        <a href="/bots/leaderboard/">Leaderboard</a>
+                    </li> 
+                   <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu dd page-scroll">
+                       --> <li><a href="/bots#team">Contact Us</a></li>
+                        <!--<li class="divider"></li>
+                        <li><a href="/bots/teamp">Our Team</a></li>
+                        </ul>
+                    </li>-->
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots/mypage/">{{username}}</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/bots/log-out/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+{% endif %}  
+    <!-- Description Section -->
+    <section id="services" style="background-color:#000;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" style="color:white;">Leaderboard</h2>
+                </div>
+            </div>
+				
+			<div class="row"></div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="col-md-1"></div>
+					<div class="col-md-2 border-red">
+						Position
+					</div>
+					<div class="col-md-3 border-red">
+						Bot Name
+					</div>
+					<div class="col-md-3 border-red">
+						Author
+					</div>
+					<div class="col-md-2 border-red">
+						Wins
+					</div>
+				</div>
+			</div>
+			{% for leader in leaders %}
+            {% if leader.1 == user %}
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="col-md-1"></div>
+					<div class="col-md-2 border-new">
+						{{leader.0}}
+					</div>
+					<div class="col-md-3 border-new">
+						{{leader.1}}
+					</div>
+					<div class="col-md-3 border-new">
+						{{leader.2}}
+					</div>
+					<div class="col-md-2 border-new">
+						{{leader.3}}
+					</div>
+				</div>
+			</div>
+            {% else %}
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2 border-yellow">
+                        {{leader.0}}
+                    </div>
+                    <div class="col-md-3 border-yellow">
+                        {{leader.1}}
+                    </div>
+                    <div class="col-md-3 border-yellow">
+                        {{leader.2}}
+                    </div>
+                    <div class="col-md-2 border-yellow">
+                        {{leader.3}}
+                    </div>
+                </div>
+            </div>
+            {% endif %}            
+			{% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="copyright">Copyright &copy; PICT IEEE Student Branch.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{% static "js/jquery-1.11.0.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{% static "js/classie.js" %}" ></script>
+    <script src="{% static "js/cbpAnimatedHeader.js" %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "js/xodia.js" %}"></script>
+
+</body>
+
+</html>
